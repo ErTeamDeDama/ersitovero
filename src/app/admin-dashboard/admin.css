@@ -1,0 +1,124 @@
+.admin-page {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    padding: 40px;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Container orizzontale con spazio tra titolo/form e logout */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  /* Parte sinistra: titolo e form */
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px; /* aumentato per permettere campi più lunghi */
+    width: 100%;
+  }
+  
+  /* Titolo */
+  .admin-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Form */
+  .admin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+  
+  .admin-form input {
+    padding: 12px;
+    background: #111;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%; /* Campo a tutta larghezza */
+  }
+  
+  .admin-form input:focus {
+    border-color: #888;
+    outline: none;
+  }
+  
+  .submit-button {
+    background: #fff;
+    color: #000;
+    padding: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    width: 100%; /* Bottone a tutta larghezza */
+  }
+  
+  .submit-button:hover {
+    background: #ccc;
+  }
+  
+  /* Messaggio */
+  .message {
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  /* Parte destra: logout */
+  .right-section {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .logout-button {
+    background: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    width: 150px; /* Lunghezza del bottone */
+  }
+  
+  .logout-button:hover {
+    background: #fff;
+    color: #000;
+  }
+  
+  /* Aggiunta: sezione messaggio di successo o errore */
+  .message.success {
+    background-color: #2ecc71;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .message.error {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Aggiunta: styling del form di creazione admin (più ampio per la visibilità) */
+  .admin-form input {
+    max-width: 100%;
+  }
+  
