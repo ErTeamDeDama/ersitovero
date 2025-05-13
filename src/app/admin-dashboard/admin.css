@@ -1,124 +1,186 @@
+/* Layout generale */
 .admin-page {
-    background-color: #000;
-    color: #fff;
-    min-height: 100vh;
-    padding: 40px;
-    font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Container orizzontale con spazio tra titolo/form e logout */
-  .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-  
-  /* Parte sinistra: titolo e form */
-  .left-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 600px; /* aumentato per permettere campi più lunghi */
-    width: 100%;
-  }
-  
-  /* Titolo */
-  .admin-title {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  /* Form */
-  .admin-form {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    width: 100%;
-  }
-  
-  .admin-form input {
-    padding: 12px;
-    background: #111;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 8px;
-    font-size: 16px;
-    width: 100%; /* Campo a tutta larghezza */
-  }
-  
-  .admin-form input:focus {
-    border-color: #888;
-    outline: none;
-  }
-  
-  .submit-button {
-    background: #fff;
-    color: #000;
-    padding: 12px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-    width: 100%; /* Bottone a tutta larghezza */
-  }
-  
-  .submit-button:hover {
-    background: #ccc;
-  }
-  
-  /* Messaggio */
-  .message {
-    font-size: 14px;
-    color: #ccc;
-  }
-  
-  /* Parte destra: logout */
-  .right-section {
-    display: flex;
-    align-items: flex-start;
-  }
-  
-  .logout-button {
-    background: none;
-    color: #fff;
-    border: 2px solid #fff;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease;
-    width: 150px; /* Lunghezza del bottone */
-  }
-  
-  .logout-button:hover {
-    background: #fff;
-    color: #000;
-  }
-  
-  /* Aggiunta: sezione messaggio di successo o errore */
-  .message.success {
-    background-color: #2ecc71;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  .message.error {
-    background-color: #e74c3c;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  /* Aggiunta: styling del form di creazione admin (più ampio per la visibilità) */
-  .admin-form input {
-    max-width: 100%;
-  }
-  
+  background-color: #0d0d0d;
+  color: #f0f0f0;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #111;
+  border-bottom: 1px solid #333;
+}
+
+/* Hamburger menu animato */
+.menu-icon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Logout minimal */
+.logout-minimal {
+  background: none;
+  color: #f0f0f0;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 6px 12px;
+}
+
+.logout-minimal:hover {
+  color: #ff4c4c;
+}
+
+/* Drawer menu */
+.side-drawer {
+  position: absolute;
+  top: 60px;
+  left: -240px;
+  width: 220px;
+  background: #181818;
+  padding: 20px;
+  border-right: 1px solid #333;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.side-drawer.open {
+  left: 0;
+}
+
+.side-drawer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-drawer li {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.side-drawer li:hover {
+  background: #333;
+}
+
+/* Main content */
+.admin-main {
+  padding: 24px;
+}
+
+.form-container {
+  max-width: 450px;
+  margin: 40px auto;
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Titolo del form */
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Stili comuni per entrambi i form */
+.admin-form, .token-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Aggiungi spazio tra i gruppi di input */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; /* Aggiungi distanza tra i campi */
+}
+
+.input-field {
+  padding: 12px;
+  font-size: 16px;
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #4e9bff;
+  outline: none;
+}
+
+/* Aggiungi un po' di distanza tra i pulsanti */
+.submit-button {
+  padding: 14px;
+  background: #4e9bff;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px; /* Aggiungi spazio sopra al pulsante */
+}
+
+.submit-button:hover {
+  background: #357db6;
+}
+
+
+/* Messaggi di successo e errore */
+.message {
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.message.success {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.message.error {
+  background-color: #e74c3c;
+  color: white;
+}
