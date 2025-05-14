@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './login.module.css';
 import { handleSubmit } from './loginHelper';
-import img from './x-icon.png'
+
 
 export default function AdminLogin() {
   const [username, setUsername] = useState('');
