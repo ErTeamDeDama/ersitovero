@@ -16,5 +16,5 @@
 .navbar {
   background-color: var(--background);
   color: var(--foreground); /* Imposta il colore del testo */
-  padding: 1rem; /* Puoi anche aggiungere del padding per migliorare la spaziatura */
+   /* Puoi anche aggiungere del padding per migliorare la spaziatura */
 }
