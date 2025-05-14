@@ -7,10 +7,9 @@ export default function Home() {
       <div>
         
       </div>
-      <body className={styles.body}>
+      <div className="body">
         <h1>Benvenuto nella Home</h1>
-        <Link href="/admin">Vai alla pagina Admin</Link>
-      </body>
+      </div>
     
   </div>
   )
