@@ -12,7 +12,7 @@ export async function POST(req) {
 
     // Aggiungi il nuovo admin nel database
     return new Promise((resolve, reject) => {
-      db.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, password], (err, results) => {
+      db.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, password], (err) => {
         if (err) {
           reject(NextResponse.json({ message: 'Errore nel database' }, { status: 500 }));
           return;
