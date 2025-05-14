@@ -15,6 +15,7 @@ export default function AdminPage() {
   const [messageType, setMessageType] = useState<"success" | "error" | "">("");
   const [tokenMessage, setTokenMessage] = useState("");
   const [tokenMessageType, setTokenMessageType] = useState<"success" | "error" | "">("");
+  const [generatedTokens, setGeneratedTokens] = useState<string[]>([]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -59,19 +60,23 @@ export default function AdminPage() {
     e.preventDefault();
     setTokenMessage("");
     setTokenMessageType("");
-
+    
     try {
       const res = await fetch("/api/generate-tokens", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ className, tokenCount }),
       });
-
-      const data = await res.json();
-
+    
+      let data = { message: "Errore sconosciuto", tokens: [] }; // Aggiungi un array di token vuoto
+      if (res.headers.get("Content-Type")?.includes("application/json")) {
+        data = await res.json();
+      }
+    
       if (res.status === 200) {
         setTokenMessage(data.message);
         setTokenMessageType("success");
+        setGeneratedTokens(data.tokens); // Aggiorna i token generati
       } else {
         setTokenMessage(data.message || "Errore durante la generazione dei token");
         setTokenMessageType("error");
@@ -164,6 +169,16 @@ export default function AdminPage() {
                 Genera
               </button>
               {tokenMessage && <p className={`message ${tokenMessageType}`}>{tokenMessage}</p>}
+              {generatedTokens.length > 0 && (
+                <div className="generated-tokens">
+                  <h3>Token generati:</h3>
+                  <ul>
+                    {generatedTokens.map((token, idx) => (
+                      <li key={idx}>{token}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </form>
           </div>
         )}
