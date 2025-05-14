@@ -1,16 +1,8 @@
-@import "tailwindcss";
-
+/* Impostazione delle variabili di colore */
 :root {
   --background: #000;
   --primary: #14442c;
   --foreground: #fff;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +12,9 @@
   }
 }
 
-.navbar{
-    background-color: var(--background);
-    color: var(--foreground);
+/* Navbar */
+.navbar {
+  background-color: var(--background);
+  color: var(--foreground); /* Imposta il colore del testo */
+  padding: 1rem; /* Puoi anche aggiungere del padding per migliorare la spaziatura */
 }
