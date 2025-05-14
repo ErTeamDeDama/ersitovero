@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import './gloabal.css';
+import './global.css';
 export default function Home() {
   return (
     <div>
