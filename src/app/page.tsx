@@ -1,29 +1,33 @@
-
 import Link from 'next/link';
 import './globals.css';
+
 export default function Home() {
   return (
-    <nav class="bg-white shadow-md">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <!-- Logo -->
-          <div class="flex-shrink-0">
-            <a href="/" class="text-xl font-bold text-gray-800">MyLogo</a>
+    <nav className="bg-white shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="text-xl font-bold text-gray-800">
+              MyLogo
+            </Link>
           </div>
 
-          <!-- Links -->
-          <div class="hidden md:flex space-x-4">
-            <a href="/" class="text-gray-600 hover:text-blue-500">Home</a>
-            <a href="#" class="text-gray-600 hover:text-blue-500">Chi siamo</a>
-            <a href="#" class="text-gray-600 hover:text-blue-500">Contatti</a>
+          {/* Links */}
+          <div className="hidden md:flex space-x-4">
+            <Link href="/" className="text-gray-600 hover:text-blue-500">Home</Link>
+            <Link href="#" className="text-gray-600 hover:text-blue-500">Chi siamo</Link>
+            <Link href="#" className="text-gray-600 hover:text-blue-500">Contatti</Link>
           </div>
 
-            <!-- CTA Button -->
-          <div class="hidden md:block">
-              <a href="/admin" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Accedi Admin</a>
-            </div>
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <Link href="/admin" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+              Accedi Admin
+            </Link>
           </div>
         </div>
-      </nav>
-  )
+      </div>
+    </nav>
+  );
 }
