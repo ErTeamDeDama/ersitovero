@@ -1,5 +1,6 @@
 *{
   margin:0;
+
 }
 /* Impostazione delle variabili di colore */
 :root {
@@ -21,6 +22,12 @@
   color: var(--foreground); /* Imposta il colore del testo */
    /* Puoi anche aggiungere del padding per migliorare la spaziatura */
 }
+
+
+
+
+
+
 
 
 
