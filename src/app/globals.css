@@ -1,4 +1,6 @@
-@import "tailwindcss";
+*{
+  margin:0;
+}
 /* Impostazione delle variabili di colore */
 :root {
   --background: #000;
