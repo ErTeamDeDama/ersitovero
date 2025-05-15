@@ -8,16 +8,16 @@ export default function Home() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-xl font-bold text-gray-800">
+            <Link href="/" className="text-xl font-bold text-gray-800 bg-green-500 px-4 py-2 rounded hover:bg-green-700">
               MyLogo
             </Link>
           </div>
 
           {/* Links */}
           <div className="hidden md:flex space-x-4">
-            <Link href="/" className="text-gray-600 hover:text-blue-500">Home</Link>
-            <Link href="#" className="text-gray-600 hover:text-blue-500">Chi siamo</Link>
-            <Link href="#" className="text-gray-600 hover:text-blue-500">Contatti</Link>
+            <Link href="/" className="text-gray-700 bg-green-500 px-4 py-2 rounded hover:bg-green-700 hover:text-gray-300">Home</Link>
+            <Link href="#" className="text-gray-700 bg-green-500 px-4 py-2 rounded hover:bg-green-700 hover:text-gray-300">Chi siamo</Link>
+            <Link href="#" className="text-gray-700 bg-green-500 px-4 py-2 rounded hover:bg-green-700 hover:text-gray-300">Contatti</Link>
           </div>
 
           {/* CTA Button */}
