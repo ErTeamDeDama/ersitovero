@@ -203,3 +203,55 @@
   padding: 4px 0;
   border-bottom: 1px solid #333;
 }
+.question-list {
+  margin-top: 20px;
+  background-color: #1e1e1e;
+  padding: 16px;
+  border-radius: 8px;
+  color: #fff;
+  list-style: none;
+}
+
+.question-list li {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.editable-input, .editable-select {
+  width: 100%;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.question-list button {
+  margin-right: 10px;
+}
+.save-button {
+  background: transparent;
+  border: 2px solid #000;
+  color: #000;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.save-button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.delete-button {
+  background: transparent;
+  border: 2px solid #ff0000;
+  color: #ff0000;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.delete-button:hover {
+  background: #ff0000;
+  color: #fff;
+}
